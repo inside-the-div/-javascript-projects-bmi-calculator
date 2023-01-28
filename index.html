@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="bmi-container">
+        <h1><i>BMI Calculator</i></h1>
+        <div class="container-feild-group">
+            <div id="bmiInput" class="container-feild">             
+                <div class="input-group">
+                    <div class="input-label">
+                        <label for="height">Height:</label>
+                        <select name="height" class="select-group" id="height">
+                            <option value="Feet">Feet</option>
+                            <option value="Inch">Inch</option>
+                            <option value="Centimeter">Centimeter</option>
+                            <option value="Meter">Meter</option>
+                        </select>
+                    </div>               
+                    <input type="number" name="from-temperature" min="0" class="input-feild">
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-label">
+                        <label for="weight">Weight:</label>
+                        <select name="weight" class="select-group" id="weight">
+                            <option value="Kg">Kg</option>
+                            <option value="Pound">Pound</option>
+                          </select>
+                    </div>               
+                    <input type="number" name="to-temperature" min="0" class="input-feild">
+                </div>
+
+                <div class="input-group">
+                    <button class="btn btn-reset">Reset</button>
+                    <button class="btn btn-calculate">Calculate</button>
+                </div>        
+            </div>
+            
+            <div class="container-feild">
+                <div id="bmiOutput">
+
+                </div>
+            </div>
+        </div>        
+    </div>    
+</body>
+</html>
