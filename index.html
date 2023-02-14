@@ -4,50 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="../common-assets/css/project-common-css.css">
+    <link rel="stylesheet" href="css/bmi-calculator-style.css">
     <title>BMI Calculator</title>
 </head>
 <body>
-    <div class="bmi-container">
-        <h1><i>BMI Calculator</i></h1>
+    <div class="container">
+        <h1>BMI Calculator</h1>
         <div class="container-feild-group">
             <div id="bmiInput" class="container-feild">             
                 <div class="input-group">
                     <div class="input-label">
-                        <label for="height">Height:</label>
-                        <select name="height" class="select-group" id="height">
-                            <option value="Feet">Feet</option>
-                            <option value="Inch">Inch</option>
-                            <option value="Centimeter">Centimeter</option>
-                            <option value="Meter">Meter</option>
-                        </select>
-                    </div>               
-                    <input type="number" name="from-temperature" min="0" class="input-feild">
+                        <label for="heightUnit">Height:</label>
+                    </div>
+                    <select name="height" class="select-group" id="heightUnit">
+                        <option value="Feet">Feet</option>
+                        <option value="Inch">Inch</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Meter">Meter</option>
+                    </select>            
+                    <input type="number" id="bmiHeight" placeholder="Height" name="from-temperature" min="0" class="input-feild">
                 </div>
                 
                 <div class="input-group">
                     <div class="input-label">
-                        <label for="weight">Weight:</label>
-                        <select name="weight" class="select-group" id="weight">
-                            <option value="Kg">Kg</option>
-                            <option value="Pound">Pound</option>
-                          </select>
-                    </div>               
-                    <input type="number" name="to-temperature" min="0" class="input-feild">
+                        <label for="weightUnit">Weight:</label>                        
+                    </div>
+                    <select name="weight" class="select-group" id="weightUnit">
+                        <option value="Kg">Kg</option>
+                        <option value="Pound">Pound</option>
+                    </select>            
+                    <input id="bmiWeight" placeholder="Weight" type="number" name="to-temperature" min="0" class="input-feild">
                 </div>
 
                 <div class="input-group">
-                    <button class="btn btn-reset">Reset</button>
-                    <button class="btn btn-calculate">Calculate</button>
+                    <button onclick="BmiCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="BmiCalculation()" id="btnCalculator" class="btn btn-calculate">Calculate</button>
                 </div>        
             </div>
             
             <div class="container-feild">
-                <div id="bmiOutput">
-
+                <div id="OutputInfo" class="output-information output-box">                    
+                    <ul>
+                        <li>Underweight = <18.5</li>
+                        <li>Normal weight = 18.5–24.9</li>
+                        <li>Overweight = 25–29.9</li>
+                        <li>Obesity = BMI of 30 or greater</li>
+                    </ul>
                 </div>
+                <div id="OutputResult" class="output-results output-box">
+                    <h2>Result</h2>
+                    <table class="output-table">
+                        <tr>
+                            <td>BMI Score</td>
+                            <td>:</td>
+                            <td><span id="bmiResult">00</span></td>
+                        </tr>                      
+                    </table>
+                </div>                
             </div>
+        </div>
+        
+        <div class="author-intro">
+            <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>        
-    </div>    
+    </div>
+    <script src="../common-assets/js/project-common-js.js"></script>
+    <script src="js/bmi-calculator-js.js"></script>   
 </body>
 </html>
