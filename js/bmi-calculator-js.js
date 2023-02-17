@@ -4,20 +4,20 @@ document.getElementById("weightUnit").value = "Kg";
 
 function BmiCalculatorFormValidate()
 {
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
 
     var bmiHeight = document.getElementById("bmiHeight").value;
     var bmiWeight = document.getElementById("bmiWeight").value;
 
-    if(IsInputFieldEmpty("bmiHeight") || (isNaN(bmiHeight) && bmiHeight <= 0))
+    if(bmiHeight == "" || isNaN(bmiHeight) || (!isNaN(bmiHeight) && bmiHeight <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("bmiHeight", "Enter valid height.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("bmiHeight", "Enter valid height.");
         return false;
     }
     
-    if(IsInputFieldEmpty("bmiWeight") || (isNaN(bmiWeight) && bmiWeight <= 0))
+    if(bmiWeight == "" || isNaN(bmiWeight) || (!isNaN(bmiWeight) && bmiWeight <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("bmiWeight", "Enter valid weight.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("bmiWeight", "Enter valid weight.");
         return false;
     }   
 
@@ -31,7 +31,7 @@ function BmiCalculatorReset()
     document.getElementById("heightUnit").value = "Centimeter";
     document.getElementById("weightUnit").value = "Kg";
    
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
 
     _cmnHideElement("OutputResult");
     _cmnShowElement("OutputInfo", "flex");
